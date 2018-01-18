@@ -13,7 +13,9 @@ var mouse={
             '#7ECEFD',
             '#FFF6E5',
             '#FF7F66',
-            ]
+            ];
+var gravity=1;
+var friction=0.99
  // Event listers
  addEventListener("mousemove", function(event))
  {
@@ -44,15 +46,15 @@ function randomcolor(colors)
    this.dy=dy; //velocity of circle
    this.radius=radius;
    this.color=color;
+    
     this.update=function()
     {
-     this.y+=1;
      if(this.y+this.radius>canvas.height)
      {
         this.dy=-this.dy;
      } else
      {
-      this.dy+=1;
+      this.dy+= gravity*friction;
       this.y+=this.dy;
      }
     this.draw();
