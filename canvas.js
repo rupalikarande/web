@@ -57,5 +57,27 @@ function randomcolor(colors)
      }
     this.draw();
     };
-    
+    this.draw=function ()
+    {
+      c.beginPath();
+      c.arc(this.x,this.y,this.radius,0,Math.PI*2,false);
+      c.fillStyle=this.color;
+      c.fill();
+      c.closePath();
+    };
+  }
+  // Implementation
+  var ball;
+  function init()
+  {
+    ball=new Ball(canvas.width/2,canvas.height/2,2,30,red)
+    console.log(ball);
+  }
+  //animation loop
+  function animate()
+  {
+   requestAnimationFrame(animate);
+   // c.clearRect(0,0,canvas.width,canvas.height); //to clear screen
+    c.fillText("HTML canvas",mouse.X,mouse.Y);
+    ball.update();
   }
