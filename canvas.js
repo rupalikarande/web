@@ -37,4 +37,25 @@ function randomcolor(colors)
   return.colors(Math.floor(Math.random()*colors.length);
 }
   //objects
- function object 
+ function Ball(x,y,dy,radius,color)
+  {
+   this.x=x;
+   this.y=y;
+   this.dy=dy; //velocity of circle
+   this.radius=radius;
+   this.color=color;
+    this.update=function()
+    {
+     this.y+=1;
+     if(this.y+this.radius>canvas.height)
+     {
+        this.dy=-this.dy;
+     } else
+     {
+      this.dy+=1;
+      this.y+=this.dy;
+     }
+    this.draw();
+    };
+    
+  }
