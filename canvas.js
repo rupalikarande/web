@@ -34,7 +34,7 @@ function randomIntFromRange(min,max)
 }
 function randomcolor(colors)
 {
-  return.colors(Math.floor(Math.random()*colors.length);
+  return.colors[Math.floor(Math.random()*colors.length)];
 }
   //objects
  function Ball(x,y,dy,radius,color)
